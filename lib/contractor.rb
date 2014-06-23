@@ -7,7 +7,7 @@ module Contractor
     end
 
     shared_context 'inherits interface' do
-      unless described_class.superclass == Object || InheritedInterface.configuration.white_list.include?(described_class)
+      unless described_class.superclass == Object
         describe "public methods:" do
           it "should contain only public instance methods that are inherited" do
             local_instance_methods = described_class.instance_methods

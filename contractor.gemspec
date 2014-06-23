@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "contractor"
   spec.version       = Contractor::VERSION
   spec.authors       = ["Jeffrey Matthias"]
-  spec.email         = ["jeffrey.matthias@sendgrid.com"]
-  spec.summary       = %q{Adds tests to enforce that interface is only inhereted from superclass.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.email         = ["jeffrey@sendgrid.com"]
+  spec.summary       = "Adds tests to enforce that interface is only inherited from superclass."
+  spec.description   = spec.description
   spec.homepage      = ""
   spec.license       = "MIT"
 
