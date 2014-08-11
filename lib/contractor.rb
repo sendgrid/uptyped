@@ -1,4 +1,4 @@
-require "contractor/version"
+require "uptyped/version"
 
 module Contractor
   module InheritedInterface
@@ -19,8 +19,8 @@ module Contractor
 
           it "should contain only public methods that are inherited" do
             local_public_methods = described_class.methods
-            superclass_punlic_methods = described_class.superclass.methods
-            extra_public_methods = local_public_methods - superclass_punlic_methods
+            superclass_public_methods = described_class.superclass.methods
+            extra_public_methods = local_public_methods - superclass_public_methods
             error_message = "expected #{described_class} to have the same public class methods as #{described_class.superclass}, got #{extra_public_methods}"
             expect(extra_public_methods).to eq([]), error_message
           end

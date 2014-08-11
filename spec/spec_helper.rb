@@ -1,0 +1,1 @@
+require_relative('../lib/uptyped/interface_validator.rb')

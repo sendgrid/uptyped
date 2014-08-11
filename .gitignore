@@ -20,3 +20,8 @@ tmp
 *.o
 *.a
 mkmf.log
+.idea/*
+*.iml
+.ruby-gemset
+.ruby-version
+.rspec

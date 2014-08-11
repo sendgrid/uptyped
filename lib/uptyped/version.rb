@@ -1,3 +1,3 @@
-module Contractor
+module Uptyped
   VERSION = "0.0.1"
 end
