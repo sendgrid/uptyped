@@ -11,7 +11,7 @@ describe Uptyped::InterfaceValidator do
 
   context 'checking public methods' do
     context 'extra method on the subclass' do
-      it 'fails when and sets an error message' do
+      it 'fails and sets an error message' do
         class TestSubClass
           def extra_instance_method
           end
@@ -21,7 +21,7 @@ describe Uptyped::InterfaceValidator do
         superclass = TestSuperClass
         interface_validator = Uptyped::InterfaceValidator.new(TestSubClass)
         expect(interface_validator).to_not be_success
-        expect(interface_validator.errors).to eq(["expected #{validated_class} to have the same public instance methods as #{superclass}, got [:extra_instance_method]."])
+        expect(interface_validator.public_instance_method_errors).to eq(["expected #{validated_class} to have the same public instance methods as #{superclass}, got [:extra_instance_method]."])
 
         class TestSubClass
           undef extra_instance_method
@@ -30,7 +30,7 @@ describe Uptyped::InterfaceValidator do
     end
 
     context 'extra class method on subclass' do
-      it 'fails when and sets an error message' do
+      it 'fails and sets an error message' do
         class TestSubClass
           def self.extra_class_method
           end
@@ -39,7 +39,7 @@ describe Uptyped::InterfaceValidator do
         superclass = TestSuperClass
         interface_validator = Uptyped::InterfaceValidator.new(TestSubClass)
         expect(interface_validator).to_not be_success
-        expect(interface_validator.errors).to eq(["expected #{validated_class} to have the same public class methods as #{superclass}, got [:extra_class_method]."])
+        expect(interface_validator.public_class_method_errors).to eq(["expected #{validated_class} to have the same public class methods as #{superclass}, got [:extra_class_method]."])
 
         class << TestSubClass
           remove_method :extra_class_method
@@ -50,7 +50,7 @@ describe Uptyped::InterfaceValidator do
 
   context 'checking arity' do
     context 'mismatch on public instance methods' do
-      it 'fails when and sets an error message' do
+      it 'fails and sets an error message' do
 
         class TestSuperClass
           def foo
@@ -64,7 +64,7 @@ describe Uptyped::InterfaceValidator do
 
         interface_validator = Uptyped::InterfaceValidator.new(TestSubClass)
         expect(interface_validator).to_not be_success
-        expect(interface_validator.errors).to eq(["TestSubClass#foo takes 1 argument(s) while TestSuperClass#foo takes 0 argument(s)."])
+        expect(interface_validator.instance_method_arity_errors).to eq(["TestSubClass#foo takes 1 argument(s) while TestSuperClass#foo takes 0 argument(s)."])
 
         class TestSubClass
           undef foo
@@ -78,7 +78,7 @@ describe Uptyped::InterfaceValidator do
   end
 
   context 'mismatch on public class methods' do
-    it 'fails when and sets an error message' do
+    it 'fails and sets an error message' do
 
       class TestSuperClass
         def self.foo
@@ -92,7 +92,7 @@ describe Uptyped::InterfaceValidator do
 
       interface_validator = Uptyped::InterfaceValidator.new(TestSubClass)
       expect(interface_validator).to_not be_success
-      expect(interface_validator.errors).to eq(["TestSubClass.foo takes 1 argument(s) while TestSuperClass.foo takes 0 argument(s)."])
+      expect(interface_validator.class_method_arity_errors).to eq(["TestSubClass.foo takes 1 argument(s) while TestSuperClass.foo takes 0 argument(s)."])
     end
   end
 end
