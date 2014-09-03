@@ -23,14 +23,25 @@ Or install it yourself as:
 
 ## Usage
 
-• Come up with a new name.
-• Create testing for the shared context
+```ruby
+require 'uptyped'
+
+RSpec.configure do |config|
+  config.include Uptyped::InheritedInterface
+end
+```
+
+## ToDo
+
+~~• Come up with a new name.~~
+
 • Improve configuration
-• Allow for white-listing of classes?
+
+• Allow for white-listing of classes/namespaces?
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/uptyped/fork )
+1. Fork it ( https://github.com/sendgrid/uptyped/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

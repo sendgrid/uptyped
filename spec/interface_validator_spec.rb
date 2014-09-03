@@ -57,7 +57,7 @@ describe Uptyped::InterfaceValidator do
           end
         end
 
-        class TestSubClass
+        class TestSubClass < TestSuperClass
           def foo(bar)
           end
         end
