@@ -1,4 +1,4 @@
-Copyright (c) 2014 Jeffrey Matthias and Monica Mishra
+Copyright (c) 2014 SendGrid, Inc.
 
 MIT License
 
