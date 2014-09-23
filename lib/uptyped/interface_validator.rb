@@ -36,7 +36,7 @@ class Uptyped::InterfaceValidator
     superclass_public_methods = validated_class.superclass.methods
     extra_public_methods = local_public_methods - superclass_public_methods
     unless extra_public_methods.empty?
-      error_message = "expected #{ validated_class} to have the same public class methods as #{ validated_class.superclass}, got #{extra_public_methods}."
+      error_message = "expected #{validated_class} to have the same public class methods as #{validated_class.superclass}, got #{extra_public_methods}."
       @public_class_method_errors << error_message
     end
   end
