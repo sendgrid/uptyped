@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jeffrey Matthias"]
   spec.email         = ["jeffrey@sendgrid.com"]
   spec.summary       = "Adds tests to enforce that interface is only inherited from superclass."
-  spec.description   = spec.description
-  spec.homepage      = ""
+  spec.description   = "Currently adds tests to anything that doesn't inherit from Object."
+  spec.homepage      = "https://github.com/sendgrid/uptyped"
   spec.license       = "MIT"
 
   spec.files         = Dir["{lib}/**/*"] + ["Rakefile"]
@@ -19,8 +19,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.6"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "shoulda-matchers"
+  spec.add_development_dependency "rake", "~> 10.3"
+  spec.add_development_dependency "shoulda-matchers", "~> 2.6"
 
   spec.add_dependency "rspec", "~> 2.99"
 end
