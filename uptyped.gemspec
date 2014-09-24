@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Uptyped::VERSION
   spec.authors       = ["Jeffrey Matthias"]
   spec.email         = ["jeffrey@sendgrid.com"]
-  spec.summary       = "Adds tests to enforce that interface is only inherited from superclass."
-  spec.description   = "Currently adds tests to anything that doesn't inherit from Object."
+  spec.summary       = "Adds tests to enforce that interface is only inherited from superclass unless superclass is Object."
+  spec.description   = "Adds tests to enforce that interface is only inherited from superclass unless superclass is Object."
   spec.homepage      = "https://github.com/sendgrid/uptyped"
   spec.license       = "MIT"
 
